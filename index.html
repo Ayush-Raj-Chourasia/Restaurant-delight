@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Delight</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Restaurant Delight</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+            </ul>
+            <form class="d-flex ms-auto" action="/search" method="GET">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <h1>Welcome to Restaurant Delight!</h1>
+    <p>Experience the finest cuisine, made with passion and love.</p>
+    <button class="btn btn-light btn-order" id="orderBtn">Order Now</button>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="menu-section container">
+    <h2 class="text-center mb-5">Our Menu</h2>
+    <div class="row">
+        <!-- Indian Cuisine -->
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1576178530704-f401b659d0cf?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8OXx8YnV0dGVyIGNoaWNrZW58ZW58MHx8fHwxNjg4MDEyMjk3&ixlib=rb-1.2.1&q=80&w=400" alt="Butter Chicken">
+                <h4>Butter Chicken</h4>
+                <p>A creamy, spiced chicken curry from North India.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Butter Chicken')">Order</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1593184454647-1f63c35f579c?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NHx8Z3VsYWIlMjBqYW11bnxlbnwwfHx8fHwxNjg4MDEzMjg1&ixlib=rb-1.2.1&q=80&w=400" alt="Gulab Jamun">
+                <h4>Gulab Jamun</h4>
+                <p>Soft milk solids dumplings soaked in sugar syrup.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Gulab Jamun')">Order</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1575713927074-0f9239ec64a3?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8dGFuZG9vcmklMjBjaGlja2VufGVufDB8fHx8fDE2ODgwMTM0MTM&ixlib=rb-1.2.1&q=80&w=400" alt="Tandoori Chicken">
+                <h4>Tandoori Chicken</h4>
+                <p>Grilled chicken marinated in a spiced yogurt blend.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Tandoori Chicken')">Order</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1627328715728-7bd82ad419d7?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NXx8cm9nYW4lMjBqb3NofGVufDB8fHx8fDE2ODgwMTM0NDk&ixlib=rb-1.2.1&q=80&w=400" alt="Rogan Josh">
+                <h4>Rogan Josh</h4>
+                <p>Aromatic lamb curry with a rich, spiced gravy.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Rogan Josh')">Order</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1621490901397-f1dd5b529c46?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8cGF2JTIwYmhhaml8ZW58MHx8fHwxNjg4MDEzNTE3&ixlib=rb-1.2.1&q=80&w=400" alt="Pav Bhaji">
+                <h4>Pav Bhaji</h4>
+                <p>Spiced mashed vegetables served with buttered bread rolls.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Pav Bhaji')">Order</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1593860940212-bd6501a1f14e?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8cmFzZ3VsbGF8ZW58MHx8fHwxNjg4MDEzNTYx&ixlib=rb-1.2.1&q=80&w=400" alt="Rasgulla">
+                <h4>Rasgulla</h4>
+                <p>Soft, spongy balls of chhena in sugar syrup.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Rasgulla')">Order</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1615392686168-69312ed6a9bc?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NHx8aWRsaSUyMGFuZCUyMHNhbWJhcnxlbnwwfHx8fHwxNjg4MDEzNjMw&ixlib=rb-1.2.1&q=80&w=400" alt="Idli & Sambar">
+                <h4>Idli & Sambar</h4>
+                <p>Soft rice cakes served with tangy lentil stew.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Idli & Sambar')">Order</button>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1621767592084-f91a62d28213?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8cGFuZWVyJTIwYnV0dGVyJTIwbWFzYWxhfGVufDB8fHx8fDE2ODgwMjA0Mzg&ixlib=rb-1.2.1&q=80&w=400" alt="Paneer Butter Masala">
+                <h4>Paneer Butter Masala</h4>
+                <p>Creamy tomato-based curry with soft paneer cubes.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Paneer Butter Masala')">Order</button>
+            </div>
+        </div>
+        
+        
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1587521648756-8f45f3b6b6a3?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8bWFzYWxhJTIwZG9zYXxlbnwwfHx8fHwxNjg4MDIwNDgz&ixlib=rb-1.2.1&q=80&w=400" alt="Masala Dosa">
+                <h4>Masala Dosa</h4>
+                <p>Thin rice crepe stuffed with spicy mashed potatoes.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Masala Dosa')">Order</button>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1615486361777-50d68f9c1733?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8YnV0dGVyJTIwbmFhbnxlbnwwfHx8fHwxNjg4MDIwNTI2&ixlib=rb-1.2.1&q=80&w=400" alt="Butter Naan">
+                <h4>Butter Naan</h4>
+                <p>Soft, leavened Indian bread brushed with butter.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Butter Naan')">Order</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1600700027701-d1da5e15b0a8?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Nnx8Y2hpY2tlbiUyMGJpcnlhbml8ZW58MHx8fHwxNjg4MDE0NTgz&ixlib=rb-1.2.1&q=80&w=400" alt="Chicken Biryani">
+                <h4>Chicken Biryani</h4>
+                <p>Aromatic spiced rice with tender chicken pieces.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Chicken Biryani')">Order</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1587202372775-d0e178fef9d8?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8M3x8YWxvbyUyMHBhcmF0aGF8ZW58MHx8fHwxNjg4MDIwNjI2&ixlib=rb-1.2.1&q=80&w=400" alt="Aloo Paratha">
+                <h4>Aloo Paratha</h4>
+                <p>Stuffed Indian flatbread filled with spicy mashed potatoes.</p>
+                <button class="btn btn-primary btn-order" onclick="showAlert('Aloo Paratha')">Order</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container py-5">
+    <h2 class="text-center mb-4">About Us</h2>
+    <p>At Restaurant Delight, we bring you the best Indian cuisine from all parts of India. From the rich, creamy curries of the North to the aromatic spices of the South, we offer a wide range of authentic dishes made with fresh ingredients and love. Come and taste the flavors of India!</p>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section container py-5">
+    <h2 class="text-center mb-4">Gallery</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="image1.jpg" class="img-fluid rounded mb-4" alt="Interior">
+        </div>
+        <div class="col-md-4">
+            <img src="image2.jpg" class="img-fluid rounded mb-4" alt="Dish 1">
+        </div>
+        <div class="col-md-4">
+            <img src="image3.jpg" class="img-fluid rounded mb-4" alt="Dish 2">
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section container py-5">
+    <h2 class="text-center mb-4">What Our Customers Say</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p>"The food was absolutely delicious and the ambiance was perfect. Highly recommend!"</p>
+                <footer class="blockquote-footer">John Doe</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p>"A fantastic dining experience with excellent service. Will come back for sure!"</p>
+                <footer class="blockquote-footer">Jane Smith</footer>
+            </blockquote>
+        </div>
+        <div class="col-md-4">
+            <blockquote class="blockquote">
+                <p>"The best Indian food I've ever had. Amazing flavors and presentation."</p>
+                <footer class="blockquote-footer">Emily Johnson</footer>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="reservation" class="container py-5">
+    <h2 class="text-center mb-4">Make a Reservation</h2>
+    <form>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <input type="text" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <input type="date" class="form-control" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" rows="3" placeholder="Additional Notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+</section>
+
+
+<div id="map" class="container py-5">
+    <h2 class="text-center mb-4">Find Us Here</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=Your-Location-Code" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+
+<!-- Back-to-Top Button -->
+<a href="#home" class="back-to-top btn btn-secondary">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+
+<!-- Add jQuery -->
+<script>
+
+</script>
+
+
+
+
+<!-- Add Social Media Links in Contact Section -->
+<section id="contact" class="footer">
+    <h3>Contact Us</h3>
+    <p>Email: info@restaurantdelight.com</p>
+    <p>Phone: +123 456 7890</p>
+    <p>Address: 123 Flavor Street, Culinary City</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+</section>
+
+<!-- Add FontAwesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<!-- Bootstrap JS and Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
