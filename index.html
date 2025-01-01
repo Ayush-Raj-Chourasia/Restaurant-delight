@@ -7,12 +7,25 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Add FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -50,6 +63,7 @@
 </section>
 
 <!-- Menu Section -->
+<!-- Menu Section -->
 <section id="menu" class="menu-section container">
     <h2 class="text-center mb-5">Our Menu</h2>
     <div class="row">
@@ -59,7 +73,9 @@
                 <img src="https://images.unsplash.com/photo-1576178530704-f401b659d0cf?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8OXx8YnV0dGVyIGNoaWNrZW58ZW58MHx8fHwxNjg4MDEyMjk3&ixlib=rb-1.2.1&q=80&w=400" alt="Butter Chicken">
                 <h4>Butter Chicken</h4>
                 <p>A creamy, spiced chicken curry from North India.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Butter Chicken')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Butter Chicken')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
 
@@ -68,7 +84,9 @@
                 <img src="https://images.unsplash.com/photo-1593184454647-1f63c35f579c?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NHx8Z3VsYWIlMjBqYW11bnxlbnwwfHx8fHwxNjg4MDEzMjg1&ixlib=rb-1.2.1&q=80&w=400" alt="Gulab Jamun">
                 <h4>Gulab Jamun</h4>
                 <p>Soft milk solids dumplings soaked in sugar syrup.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Gulab Jamun')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Gulab Jamun')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
         <div class="col-md-4">
@@ -76,15 +94,19 @@
                 <img src="https://images.unsplash.com/photo-1575713927074-0f9239ec64a3?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8dGFuZG9vcmklMjBjaGlja2VufGVufDB8fHx8fDE2ODgwMTM0MTM&ixlib=rb-1.2.1&q=80&w=400" alt="Tandoori Chicken">
                 <h4>Tandoori Chicken</h4>
                 <p>Grilled chicken marinated in a spiced yogurt blend.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Tandoori Chicken')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Tandoori Chicken')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
         <div class="col-md-4">
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1627328715728-7bd82ad419d7?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NXx8cm9nYW4lMjBqb3NofGVufDB8fHx8fDE2ODgwMTM0NDk&ixlib=rb-1.2.1&q=80&w=400" alt="Rogan Josh">
+                <img src="https://images.unsplash.com/photo-1627328715728-7bd82ad419d7?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NXx8cm9nYW4lMjBqb3NofGVufDB8fHx8fHwxNjg4MDEzNDQ5&ixlib=rb-1.2.1&q=80&w=400" alt="Rogan Josh">
                 <h4>Rogan Josh</h4>
                 <p>Aromatic lamb curry with a rich, spiced gravy.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Rogan Josh')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Rogan Josh')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
         <div class="col-md-4">
@@ -92,7 +114,9 @@
                 <img src="https://images.unsplash.com/photo-1621490901397-f1dd5b529c46?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8cGF2JTIwYmhhaml8ZW58MHx8fHwxNjg4MDEzNTE3&ixlib=rb-1.2.1&q=80&w=400" alt="Pav Bhaji">
                 <h4>Pav Bhaji</h4>
                 <p>Spiced mashed vegetables served with buttered bread rolls.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Pav Bhaji')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Pav Bhaji')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
         <div class="col-md-4">
@@ -100,7 +124,9 @@
                 <img src="https://images.unsplash.com/photo-1593860940212-bd6501a1f14e?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8cmFzZ3VsbGF8ZW58MHx8fHwxNjg4MDEzNTYx&ixlib=rb-1.2.1&q=80&w=400" alt="Rasgulla">
                 <h4>Rasgulla</h4>
                 <p>Soft, spongy balls of chhena in sugar syrup.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Rasgulla')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Rasgulla')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
         <div class="col-md-4">
@@ -108,62 +134,95 @@
                 <img src="https://images.unsplash.com/photo-1615392686168-69312ed6a9bc?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8NHx8aWRsaSUyMGFuZCUyMHNhbWJhcnxlbnwwfHx8fHwxNjg4MDEzNjMw&ixlib=rb-1.2.1&q=80&w=400" alt="Idli & Sambar">
                 <h4>Idli & Sambar</h4>
                 <p>Soft rice cakes served with tangy lentil stew.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Idli & Sambar')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Idli & Sambar')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-        
         <div class="col-md-4">
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1621767592084-f91a62d28213?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8cGFuZWVyJTIwYnV0dGVyJTIwbWFzYWxhfGVufDB8fHx8fDE2ODgwMjA0Mzg&ixlib=rb-1.2.1&q=80&w=400" alt="Paneer Butter Masala">
+                <img src="https://images.unsplash.com/photo-1621767592084-f91a62d28213?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8cGFuZWVyJTIwYnV0dGVyJTIwbWFzYWxhfGVufDB8fHx8fHwxNjg4MDIwNDM4&ixlib=rb-1.2.1&q=80&w=400" alt="Paneer Butter Masala">
                 <h4>Paneer Butter Masala</h4>
                 <p>Creamy tomato-based curry with soft paneer cubes.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Paneer Butter Masala')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Paneer Butter Masala')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-        
-        
         <div class="col-md-4">
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1587521648756-8f45f3b6b6a3?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Mnx8bWFzYWxhJTIwZG9zYXxlbnwwfHx8fHwxNjg4MDIwNDgz&ixlib=rb-1.2.1&q=80&w=400" alt="Masala Dosa">
                 <h4>Masala Dosa</h4>
                 <p>Thin rice crepe stuffed with spicy mashed potatoes.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Masala Dosa')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Masala Dosa')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-        
         <div class="col-md-4">
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1615486361777-50d68f9c1733?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8MXx8YnV0dGVyJTIwbmFhbnxlbnwwfHx8fHwxNjg4MDIwNTI2&ixlib=rb-1.2.1&q=80&w=400" alt="Butter Naan">
                 <h4>Butter Naan</h4>
                 <p>Soft, leavened Indian bread brushed with butter.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Butter Naan')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Butter Naan')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1600700027701-d1da5e15b0a8?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8Nnx8Y2hpY2tlbiUyMGJpcnlhbml8ZW58MHx8fHwxNjg4MDE0NTgz&ixlib=rb-1.2.1&q=80&w=400" alt="Chicken Biryani">
                 <h4>Chicken Biryani</h4>
                 <p>Aromatic spiced rice with tender chicken pieces.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Chicken Biryani')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Chicken Biryani')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1587202372775-d0e178fef9d8?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg2MXwwfDF8c2VhY2h8M3x8YWxvbyUyMHBhcmF0aGF8ZW58MHx8fHwxNjg4MDIwNjI2&ixlib=rb-1.2.1&q=80&w=400" alt="Aloo Paratha">
                 <h4>Aloo Paratha</h4>
                 <p>Stuffed Indian flatbread filled with spicy mashed potatoes.</p>
-                <button class="btn btn-primary btn-order" onclick="showAlert('Aloo Paratha')">Order</button>
+                <button class="btn btn-primary btn-order" onclick="addToCart('Aloo Paratha')">
+                    <i class="fas fa-cart-plus"></i> Order
+                </button>
             </div>
         </div>
-        
     </div>
 </section>
+
+
+
+
+<!-- Cart Icon in Header -->
+<div class="cart-icon" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cartCount">0</span>
+</div>
+
+<!-- Shopping Cart Sidebar -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            Total: ₹<span id="cartTotal">0</span>
+        </div>
+        <button class="btn btn-success checkout-btn" id="checkoutBtn">Checkout</button>
+    </div>
+</div>
+
 
 <!-- About Section -->
 <section id="about" class="container py-5">
     <h2 class="text-center mb-4">About Us</h2>
+    <p>Founded in 2010, Restaurant Delight has been serving authentic Indian cuisine with a modern twist. Our chefs bring decades of experience and passion to every dish.</p>
     <p>At Restaurant Delight, we bring you the best Indian cuisine from all parts of India. From the rich, creamy curries of the North to the aromatic spices of the South, we offer a wide range of authentic dishes made with fresh ingredients and love. Come and taste the flavors of India!</p>
 </section>
 <!-- Gallery Section -->
@@ -183,35 +242,85 @@
 </section>
 
 
-
 <!-- Testimonials Section -->
-<section id="testimonials" class="testimonials-section container py-5">
-    <h2 class="text-center mb-4">What Our Customers Say</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p>"The food was absolutely delicious and the ambiance was perfect. Highly recommend!"</p>
-                <footer class="blockquote-footer">John Doe</footer>
-            </blockquote>
+<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
+    <div class="carousel-inner">
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+            <div class="testimonial text-center">
+                <img src="profile1.jpg" alt="Reviewer 1" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Ananya Sharma</h4>
+                <p class="reviewer-role">Graphic Designer</p>
+                <div class="stars mb-2">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "Exceptional service with a delightful variety of dishes. Highly recommend this place!"
+                </p>
+                <!-- Bullet Indicators -->
+                <div class="carousel-indicators justify-content-center">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p>"A fantastic dining experience with excellent service. Will come back for sure!"</p>
-                <footer class="blockquote-footer">Jane Smith</footer>
-            </blockquote>
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+            <div class="testimonial text-center">
+                <img src="profile2.jpg" alt="Reviewer 2" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Rajiv Menon</h4>
+                <p class="reviewer-role">Food Enthusiast</p>
+                <div class="stars mb-2">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A culinary masterpiece! The ambiance and flavors exceeded all expectations."
+                </p>
+                <!-- Bullet Indicators -->
+                <div class="carousel-indicators justify-content-center">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <blockquote class="blockquote">
-                <p>"The best Indian food I've ever had. Amazing flavors and presentation."</p>
-                <footer class="blockquote-footer">Emily Johnson</footer>
-            </blockquote>
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+            <div class="testimonial text-center">
+                <img src="profile3.jpg" alt="Reviewer 3" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Pooja Verma</h4>
+                <p class="reviewer-role">Lifestyle Blogger</p>
+                <div class="stars mb-2">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A delightful experience with impeccable service. This restaurant truly stands out!"
+                </p>
+                <!-- Bullet Indicators -->
+                <div class="carousel-indicators justify-content-center">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 
 
-
+<!-- Reservation Section -->
 <section id="reservation" class="container py-5">
     <h2 class="text-center mb-4">Make a Reservation</h2>
     <form>
@@ -236,11 +345,63 @@
     </form>
 </section>
 
-
+<!-- Map Section -->
 <div id="map" class="container py-5">
     <h2 class="text-center mb-4">Find Us Here</h2>
     <iframe src="https://www.google.com/maps/embed?pb=Your-Location-Code" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
+
+
+<!-- Footer -->
+<footer class="footer bg-light text-dark py-5">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <!-- Logo and Social Links -->
+            <div class="col-md-3">
+                <h4 class="text-success">Resturant Delight</h4>
+                <br>
+                <div class="social-links">
+                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3">
+                <h5 class="fw-bold">Services</h5>
+                <ul class="list-unstyled">
+                    <li>Delivery</li>
+                    <li>Pricing</li>
+                    <li>Fast food</li>
+                    <li>Reserve your spot</li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="col-md-3">
+                <h5 class="fw-bold">Information</h5>
+                <ul class="list-unstyled">
+                    <li>Event</li>
+                    <li>Contact us</li>
+                    <li>Privacy policy</li>
+                    <li>Terms of services</li>
+                </ul>
+            </div>
+
+            <!-- Address -->
+            <div class="col-md-3">
+                <h5 class="fw-bold">Address</h5>
+                <ul class="list-unstyled">
+                    <li>Lima - Peru</li>
+                    <li>Jr Union #999</li>
+                    <li>999 - 888 - 777</li>
+                    <li><a href="mailto:restaurantdelight@gmail.com">restaurantdelight@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
@@ -250,36 +411,6 @@
 </a>
 
 
-<!-- Add jQuery -->
-<script>
 
-</script>
-
-
-
-
-<!-- Add Social Media Links in Contact Section -->
-<section id="contact" class="footer">
-    <h3>Contact Us</h3>
-    <p>Email: info@restaurantdelight.com</p>
-    <p>Phone: +123 456 7890</p>
-    <p>Address: 123 Flavor Street, Culinary City</p>
-    <div class="social-icons">
-        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-</section>
-
-<!-- Add FontAwesome for Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-
-<!-- Bootstrap JS and Popper -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-<!-- Custom JS -->
-<script src="script.js"></script>
 </body>
 </html>
