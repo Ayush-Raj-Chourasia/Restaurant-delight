@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Restaurant Delight - Authentic Indian cuisine with a modern twist. Explore our menu, book a table, and enjoy a delightful dining experience.">
+    <meta name="keywords" content="Indian cuisine, restaurant, food, menu, reservation">
+    <meta name="author" content="Restaurant Delight">
     <title>Restaurant Delight</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -17,9 +25,6 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Add FontAwesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
     <!-- Bootstrap JS and Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
@@ -27,832 +32,897 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="assets/logo.png" alt="Restaurant Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#testimonialCarousel">Testimonials</a></li>
-                <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
-                <li class="cart-icon" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="cartCount">0</span>
-                </li>
-            </ul>
-            
-            
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Restaurant Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonialCarousel">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                    <li class="cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount">0</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
-<!-- Hero Section -->
-
-<section id="home" class="hero-section text-white" >
-    <div class="hero-content">
-        <h1 class="hero-title">Restaurant Delight</h1>
-        <p class="hero-subtitle">From Our Kitchen to Your Table</p>
-    </div>
-</section>
-
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white">
+        <div class="hero-content">
+            <h1 class="hero-title">Restaurant Delight</h1>
+            <p class="hero-subtitle">From Our Kitchen to Your Table</p>
+        </div>
+    </section>
 
 
+    <section id="menu" class="menu-section container">
+        <h2 class="text-center mb-5 pt-5">Our Menu</h2>
 
-
-
-
-<section id="menu" class="menu-section container">
-    <h2 class="text-center mb-5">Our Menu</h2>
-
-    <!-- Category Filter Buttons -->
-    <div class="menu-filters text-center mb-4">
-        <button class="btn btn-filter active" data-filter="all">All</button>
-        <button class="btn btn-filter" data-filter="main-course">Main Course</button>
-        <button class="btn btn-filter" data-filter="bread">Breads</button>
-        <button class="btn btn-filter" data-filter="dessert">Desserts</button>
-        <button class="btn btn-filter" data-filter="beverages">Beverages</button>
-    </div>
-
-    <div class="row">
-        <!-- Main Course Items -->
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Butter+Chicken" alt="Butter Chicken">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Butter Chicken</h4>
-                        <div class="indicators">
-                            <span class="non-veg"><i class="fas fa-circle"></i></span>
-                            <span class="spicy-level">🌶️</span>
-                        </div>
-                    </div>
-                    <p class="description">Tender chicken pieces in rich, creamy tomato gravy with aromatic spices</p>
-                    <div class="price-order">
-                        <span class="price">₹350</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Butter Chicken')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Paneer+Butter+Masala" alt="Paneer Butter Masala">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Paneer Butter Masala</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Cottage cheese cubes in a creamy tomato-based gravy</p>
-                    <div class="price-order">
-                        <span class="price">₹320</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Paneer Butter Masala')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Fish+Fry" alt="Fish Fry">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Fish Fry</h4>
-                        <div class="indicators">
-                            <span class="non-veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Crispy fried fish fillet seasoned with Indian spices</p>
-                    <div class="price-order">
-                        <span class="price">₹250</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Fish Fry')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Rogan+Josh" alt="Rogan Josh">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Rogan Josh</h4>
-                        <div class="indicators">
-                            <span class="non-veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Traditional Kashmiri lamb curry with aromatic spices</p>
-                    <div class="price-order">
-                        <span class="price">₹400</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Rogan Josh')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Chicken+Biryani" alt="Chicken Biryani">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Chicken Biryani</h4>
-                        <div class="indicators">
-                            <span class="non-veg"><i class="fas fa-circle"></i></span>
-                            <span class="spicy-level">🌶️</span>
-                        </div>
-                    </div>
-                    <p class="description">Aromatic basmati rice cooked with tender chicken and spices</p>
-                    <div class="price-order">
-                        <span class="price">₹300</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Chicken Biryani')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="main-course">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Dal+Makhani" alt="Dal Makhani">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Dal Makhani</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Slow-cooked black lentils in a buttery tomato sauce</p>
-                    <div class="price-order">
-                        <span class="price">₹180</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Dal Makhani')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <!-- Category Filter Buttons -->
+        <div class="menu-filters text-center mb-4">
+            <button class="btn btn-filter active" data-filter="all">All</button>
+            <button class="btn btn-filter" data-filter="main-course">Main Course</button>
+            <button class="btn btn-filter" data-filter="bread">Breads</button>
+            <button class="btn btn-filter" data-filter="dessert">Desserts</button>
+            <button class="btn btn-filter" data-filter="beverages">Beverages</button>
         </div>
 
-        <!-- Bread Items -->
-        <div class="col-md-4 menu-item" data-category="bread">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Naan" alt="Naan">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Naan</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Soft and fluffy Indian flatbread</p>
-                    <div class="price-order">
-                        <span class="price">₹50</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Naan')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 menu-item" data-category="bread">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Stuffed+Paratha" alt="Stuffed Paratha">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Stuffed Paratha</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Indian flatbread stuffed with spiced potatoes</p>
-                    <div class="price-order">
-                        <span class="price">₹80</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Stuffed Paratha')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 menu-item" data-category="bread">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Garlic+Naan" alt="Garlic Naan">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Garlic Naan</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Indian flatbread topped with fresh garlic and coriander</p>
-                    <div class="price-order">
-                        <span class="price">₹60</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Garlic Naan')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="bread">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Butter+Roti" alt="Butter Roti">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Butter Roti</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Whole wheat roti brushed with butter</p>
-                    <div class="price-order">
-                        <span class="price">₹40</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Butter Roti')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dessert Items -->
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Gulab+Jamun" alt="Gulab Jamun">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Gulab Jamun</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Deep-fried milk solids soaked in aromatic sugar syrup</p>
-                    <div class="price-order">
-                        <span class="price">₹100</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Gulab Jamun')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Kulfi" alt="Kulfi">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Kulfi</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Creamy traditional Indian ice cream</p>
-                    <div class="price-order">
-                        <span class="price">₹60</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Kulfi')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Rasmalai" alt="Rasmalai">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Rasmalai</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Soft cheese balls soaked in sweetened milk</p>
-                    <div class="price-order">
-                        <span class="price">₹120</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Rasmalai')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Fruit+Salad" alt="Fruit Salad">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Fruit Salad</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Fresh seasonal fruits with a touch of cream</p>
-                    <div class="price-order">
-                        <span class="price">₹120</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Fruit Salad')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Brownie" alt="Brownie">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Brownie</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Rich chocolate brownie served warm</p>
-                    <div class="price-order">
-                        <span class="price">₹150</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Brownie')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Jalebi" alt="Jalebi">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Jalebi</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Crispy, coiled sweet soaked in sugar syrup</p>
-                    <div class="price-order">
-                        <span class="price">₹80</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Jalebi')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Kheer" alt="Kheer">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Kheer</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Traditional Indian rice pudding made with milk and sugar</p>
-                    <div class="price-order">
-                        <span class="price">₹90</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Kheer')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="dessert">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Sandesh" alt="Sandesh">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Sandesh</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Delicate Bengali sweet made from fresh paneer and sugar</p>
-                    <div class="price-order">
-                        <span class="price">₹100</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Sandesh')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Beverages Items -->
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Masala+Chai" alt="Masala Chai">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Masala Chai</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Traditional Indian spiced tea brewed with milk</p>
-                    <div class="price-order">
-                        <span class="price">₹30</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Masala Chai')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Fresh+Lime+Soda" alt="Fresh Lime Soda">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Fresh Lime Soda</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Refreshing soda with lime juice</p>
-                    <div class="price-order">
-                        <span class="price">₹40</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Fresh Lime Soda')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Hot+Chocolate" alt="Hot Chocolate">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Hot Chocolate</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Rich, creamy chocolate drink</p>
-                    <div class="price-order">
-                        <span class="price">₹90</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Hot Chocolate')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Lassi" alt="Lassi">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Lassi</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Refreshing yogurt-based drink available sweet or salty</p>
-                    <div class="price-order">
-                        <span class="price">₹50</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Lassi')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Mango+Lassi" alt="Mango Lassi">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Mango Lassi</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Creamy yogurt drink blended with ripe mangoes</p>
-                    <div class="price-order">
-                        <span class="price">₹60</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Mango Lassi')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 menu-item" data-category="beverages">
-            <div class="menu-card">
-                <img src="https://via.placeholder.com/400x300?text=Cold+Coffee" alt="Cold Coffee">
-                <div class="menu-content">
-                    <div class="menu-header">
-                        <h4>Cold Coffee</h4>
-                        <div class="indicators">
-                            <span class="veg"><i class="fas fa-circle"></i></span>
-                        </div>
-                    </div>
-                    <p class="description">Chilled coffee blended with milk and ice</p>
-                    <div class="price-order">
-                        <span class="price">₹70</span>
-                        <button class="btn btn-primary btn-order" onclick="addToCart('Cold Coffee')">
-                            <i class="fas fa-cart-plus"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-<!-- Shopping Cart Sidebar -->
-<div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-        <h3>Your Cart</h3>
-        <button class="close-cart" onclick="toggleCart()">×</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-        <!-- Cart items will be dynamically added here -->
-    </div>
-    <div class="cart-footer">
-        <div class="cart-total">
-            Total: ₹<span id="cartTotal">0</span>
-        </div>
-        <button class="btn btn-success checkout-btn" id="checkoutBtn">Checkout</button>
-    </div>
-</div>
-
-
-<!-- About Section -->
-<section id="about" class="container py-5">
-    <h2 class="text-center mb-4">About Us</h2>
-    <p>Founded in 2010, Restaurant Delight has been serving authentic Indian cuisine with a modern twist. Our chefs bring decades of experience and passion to every dish.</p>
-    <p>At Restaurant Delight, we bring you the best Indian cuisine from all parts of India. From the rich, creamy curries of the North to the aromatic spices of the South, we offer a wide range of authentic dishes made with fresh ingredients and love. Come and taste the flavors of India!</p>
-</section>
-
-
-
-
-<!-- Gallery Section -->
-<section id="gallery" class="gallery-section container py-5">
-    <h2 class="text-center mb-5">Our Gallery</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 1" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 2" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 3" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 4" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 5" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300" alt="Dish 6" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Testimonials Section -->
-<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="background-color: #333; color: #fff; padding: 20px; border-radius: 10px;">
-    <div class="carousel-inner">
-        <!-- Testimonial 1 -->
-        <div class="carousel-item  text-center">
-            <img src="profile1.jpg" alt="Reviewer 1" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Ananya Sharma</h4>
-            <p class="reviewer-role">Graphic Designer</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "Exceptional service with a delightful variety of dishes. Highly recommend this place!"
-            </p>
-        </div>
-        <!-- Testimonial 2 -->
-        <div class="carousel-item active text-center">
-            <img src="profile2.jpg" alt="Reviewer 2" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Rajiv Menon</h4>
-            <p class="reviewer-role">Food Enthusiast</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "A culinary masterpiece! The ambiance and flavors exceeded all expectations."
-            </p>
-        </div>
-        <!-- Testimonial 3 -->
-        <div class="carousel-item text-center">
-            <img src="profile3.jpg" alt="Reviewer 3" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Pooja Verma</h4>
-            <p class="reviewer-role">Lifestyle Blogger</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "A delightful experience with impeccable service. This restaurant truly stands out!"
-            </p>
-        </div>
-        <!-- Testimonial 4 -->
-        <div class="carousel-item text-center">
-            <img src="profile4.jpg" alt="Reviewer 4" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Siddharth Kapoor</h4>
-            <p class="reviewer-role">Chef</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "A cozy place with amazing flavors. Definitely a must-visit for food lovers!"
-            </p>
-        </div>
-        <!-- Testimonial 5 -->
-        <div class="carousel-item text-center">
-            <img src="profile5.jpg" alt="Reviewer 5" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Megha Gupta</h4>
-            <p class="reviewer-role">Travel Blogger</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "The perfect destination for a family outing. The food and service are top-notch."
-            </p>
-        </div>
-        <!-- Testimonial 6 -->
-        <div class="carousel-item text-center">
-            <img src="profile6.jpg" alt="Reviewer 6" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Arjun Nair</h4>
-            <p class="reviewer-role">Entrepreneur</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            </div>
-            <p class="review-text mb-4">
-                "Great food, amazing staff, and a wonderful atmosphere. Highly recommend!"
-            </p>
-        </div>
-        <!-- Testimonial 7 -->
-        <div class="carousel-item text-center">
-            <img src="profile7.jpg" alt="Reviewer 7" class="rounded-circle profile-photo mb-3">
-            <h4 class="reviewer-name">Priya Malhotra</h4>
-            <p class="reviewer-role">Event Planner</p>
-            <div class="stars mb-2">
-                <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            </div>
-            <p class="review-text mb-4">
-                "A wonderful experience! The staff went above and beyond to ensure our comfort."
-            </p>
-        </div>
-    </div>
-
-    <!-- Carousel Indicators -->
-    <div class="carousel-indicators justify-content-center mt-4">
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-    </div>
-
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-
-
-<!-- Reservation Section -->
-<section id="reservation" class="container py-5 bg-white">
-    <h2 class="text-center mb-4">Make a Reservation</h2>
-    <form>
         <div class="row">
-            <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6 mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" placeholder="Phone Number" required>
-            </div>
-            <div class="col-md-6 mb-3">
-                <input type="date" class="form-control" required>
-            </div>
-        </div>
-        <div class="mb-3">
-            <textarea class="form-control" rows="3" placeholder="Additional Notes"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Book Now</button>
-    </form>
-</section>
-
-<!-- Map Section -->
-<div id="map" class="container py-5">
-    <h2 class="text-center mb-4">Find Us Here</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=Your-Location-Code" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-
-
-<!-- Footer -->
-<footer class="footer bg-light text-dark py-5">
-    <div class="container">
-        <div class="row text-center text-md-start">
-            <!-- Logo and Social Links -->
-            <div class="col-md-3">
-                <h4 class="text-success">Resturant Delight</h4>
-                <br>
-                <div class="social-links">
-                    <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+            <!-- Main Course Items -->
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Butter Chicken.jpg" alt="Butter Chicken"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Butter Chicken</h4>
+                            <div class="indicators">
+                                <span class="non-veg"><i class="fas fa-circle"></i></span>
+                                <span class="spicy-level">🌶️</span>
+                            </div>
+                        </div>
+                        <p class="description">Tender chicken pieces in rich, creamy tomato gravy with aromatic spices
+                        </p>
+                        <div class="price-order">
+                            <span class="price">₹350</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Butter Chicken')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Services -->
-            <div class="col-md-3">
-                <h5 class="fw-bold">Services</h5>
-                <ul class="list-unstyled">
-                    <li>Delivery</li>
-                    <li>Pricing</li>
-                    <li>Fast food</li>
-                    <li>Reserve your spot</li>
-                </ul>
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Paneer Butter Masala.jpg" alt="Paneer Butter Masala"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Paneer Butter Masala</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Cottage cheese cubes in a creamy tomato-based gravy</p>
+                        <div class="price-order">
+                            <span class="price">₹320</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Paneer Butter Masala')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Information -->
-            <div class="col-md-3">
-                <h5 class="fw-bold">Information</h5>
-                <ul class="list-unstyled">
-                    <li>Event</li>
-                    <li>Contact Us</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Services</li>
-                </ul>
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Fish Fry.jpeg" alt="Fish Fry"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Fish Fry</h4>
+                            <div class="indicators">
+                                <span class="non-veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Crispy fried fish fillet seasoned with Indian spices</p>
+                        <div class="price-order">
+                            <span class="price">₹250</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Fish Fry')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Address -->
-            <div class="col-md-3">
-                <h5 class="fw-bold">Address</h5>
-                <ul class="list-unstyled">
-                    <li>Lima - Peru</li>
-                    <li>Jr Union #999</li>
-                    <li>999 - 888 - 777</li>
-                    <li><a href="mailto:restaurantdelight@gmail.com">restaurantdelight@gmail.com</a></li>
-                </ul>
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Rogan Josh.jpg" alt="Rogan Josh"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Rogan Josh</h4>
+                            <div class="indicators">
+                                <span class="non-veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Traditional Kashmiri lamb curry with aromatic spices</p>
+                        <div class="price-order">
+                            <span class="price">₹400</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Rogan Josh')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Chicken Biryani.jpg" alt="Chicken Biryani"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Chicken Biryani</h4>
+                            <div class="indicators">
+                                <span class="non-veg"><i class="fas fa-circle"></i></span>
+                                <span class="spicy-level">🌶️</span>
+                            </div>
+                        </div>
+                        <p class="description">Aromatic basmati rice cooked with tender chicken and spices</p>
+                        <div class="price-order">
+                            <span class="price">₹300</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Chicken Biryani')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="main-course">
+                <div class="menu-card">
+                    <img src="assets/menu/Dal Makhani.jpg" alt="Dal Makhani"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Dal Makhani</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Slow-cooked black lentils in a buttery tomato sauce</p>
+                        <div class="price-order">
+                            <span class="price">₹180</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Dal Makhani')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bread Items -->
+            <div class="col-md-4 menu-item" data-category="bread">
+                <div class="menu-card">
+                    <img src="assets/menu/Naan.jpg" alt="Naan" style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Naan</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Soft and fluffy Indian flatbread</p>
+                        <div class="price-order">
+                            <span class="price">₹50</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Naan')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="bread">
+                <div class="menu-card">
+                    <img src="assets/menu/Stuffed Paratha.jpg" alt="Stuffed Paratha"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Stuffed Paratha</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Indian flatbread stuffed with spiced potatoes</p>
+                        <div class="price-order">
+                            <span class="price">₹80</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Stuffed Paratha')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="bread">
+                <div class="menu-card">
+                    <img src="assets/menu/Garlic Naan.jpg" alt="Garlic Naan"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Garlic Naan</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Indian flatbread topped with fresh garlic and coriander</p>
+                        <div class="price-order">
+                            <span class="price">₹60</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Garlic Naan')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="bread">
+                <div class="menu-card">
+                    <img src="assets/menu/Butter Roti.jpeg" alt="Butter Roti"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Butter Roti</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Whole wheat roti brushed with butter</p>
+                        <div class="price-order">
+                            <span class="price">₹40</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Butter Roti')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dessert Items -->
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Gulab Jamun.jpeg" alt="Gulab Jamun"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Gulab Jamun</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Deep-fried milk solids soaked in aromatic sugar syrup</p>
+                        <div class="price-order">
+                            <span class="price">₹100</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Gulab Jamun')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Kulfi.jpeg" alt="Kulfi"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Kulfi</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Creamy traditional Indian ice cream</p>
+                        <div class="price-order">
+                            <span class="price">₹60</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Kulfi')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Rasmalai.jpg" alt="Rasmalai"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Rasmalai</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Soft cheese balls soaked in sweetened milk</p>
+                        <div class="price-order">
+                            <span class="price">₹120</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Rasmalai')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Fruit Salad.jpg" alt="Fruit Salad"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Fruit Salad</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Fresh seasonal fruits with a touch of cream</p>
+                        <div class="price-order">
+                            <span class="price">₹120</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Fruit Salad')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Brownie.jpg" alt="Brownie"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Brownie</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Rich chocolate brownie served warm</p>
+                        <div class="price-order">
+                            <span class="price">₹150</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Brownie')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Jalebi.jpg" alt="Jalebi"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Jalebi</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Crispy, coiled sweet soaked in sugar syrup</p>
+                        <div class="price-order">
+                            <span class="price">₹80</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Jalebi')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Kheer.jpg" alt="Kheer"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Kheer</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Traditional Indian rice pudding made with milk and sugar</p>
+                        <div class="price-order">
+                            <span class="price">₹90</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Kheer')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="dessert">
+                <div class="menu-card">
+                    <img src="assets/menu/Sandesh.jpg" alt="Sandesh"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Sandesh</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Delicate Bengali sweet made from fresh paneer and sugar</p>
+                        <div class="price-order">
+                            <span class="price">₹100</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Sandesh')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages Items -->
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Masala Chai.jpg" alt="Masala Chai"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Masala Chai</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Traditional Indian spiced tea brewed with milk</p>
+                        <div class="price-order">
+                            <span class="price">₹30</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Masala Chai')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Fresh Lime Soda.jpeg" alt="Fresh Lime Soda"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Fresh Lime Soda</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Refreshing soda with lime juice</p>
+                        <div class="price-order">
+                            <span class="price">₹40</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Fresh Lime Soda')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Hot Chocolate.jpg" alt="Hot Chocolate"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Hot Chocolate</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Rich, creamy chocolate drink</p>
+                        <div class="price-order">
+                            <span class="price">₹90</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Hot Chocolate')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Lassi.jpg" alt="Lassi"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Lassi</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Refreshing yogurt-based drink available sweet or salty</p>
+                        <div class="price-order">
+                            <span class="price">₹50</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Lassi')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Mango Lassi.jpeg" alt="Mango Lassi"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Mango Lassi</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Creamy yogurt drink blended with ripe mangoes</p>
+                        <div class="price-order">
+                            <span class="price">₹60</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Mango Lassi')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 menu-item" data-category="beverages">
+                <div class="menu-card">
+                    <img src="assets/menu/Cold Coffee.jpg" alt="Cold Coffee"
+                        style="width: 400px; height: 300px; object-fit: cover;">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <h4>Cold Coffee</h4>
+                            <div class="indicators">
+                                <span class="veg"><i class="fas fa-circle"></i></span>
+                            </div>
+                        </div>
+                        <p class="description">Chilled coffee blended with milk and ice</p>
+                        <div class="price-order">
+                            <span class="price">₹70</span>
+                            <button class="btn btn-primary btn-order" onclick="addToCart('Cold Coffee')">
+                                <i class="fas fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: ₹<span id="cartTotal">0</span>
+            </div>
+            <button class="btn btn-success checkout-btn" id="checkoutBtn">Checkout</button>
+        </div>
     </div>
-</footer>
 
-<!-- Back-to-Top Button -->
-<a href="#home" class="back-to-top btn btn-secondary">
-    <i class="fas fa-arrow-up"></i>
-</a>
 
-</body>
+    <!-- About Section -->
+    <section id="about" class="container py-5">
+        <div class="container-fluid max-width-container">
+            <div class="row">
+                <div class="col-lg-5 align-items-stretch video-box">
+                    <video width="270" height="480" preload="none" controls muted poster="assets/about_preview.png"
+                        src="assets/about.mp4"></video>
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2 class="text-center mb-4 pt-5">About Us</h2>
+                    <p>Founded in 2010, Restaurant Delight has been serving authentic Indian cuisine with a modern
+                        twist. Our chefs bring decades of experience and passion to every dish.</p>
+                    <p>At Restaurant Delight, we bring you the best Indian cuisine from all parts of India. From the
+                        rich, creamy curries of the North to the aromatic spices of the South, we offer a wide range of
+                        authentic dishes made with fresh ingredients and love. Come and taste the flavors of India!</p>
+                    <div class="text-center mt-4">
+                        <a href="#reservation" class="btn btn-primary">Book a Table</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section container py-5">
+        <h2 class="text-center mb-5">Our Gallery</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery1.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery2.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery3.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery4.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery5.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery6.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
+        style="background-color: #333; color: #fff; padding: 20px; border-radius: 10px;">
+        <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item  text-center">
+                <img src="assets/testimonials/profile1.jpeg" alt="Reviewer 1" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Ananya Sharma</h4>
+                <p class="reviewer-role">Graphic Designer</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "Exceptional service with a delightful variety of dishes. Highly recommend this place!"
+                </p>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="carousel-item active text-center">
+                <img src="assets/testimonials/profile2.jpeg" alt="Reviewer 2" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Rajiv Menon</h4>
+                <p class="reviewer-role">Food Enthusiast</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A culinary masterpiece! The ambiance and flavors exceeded all expectations."
+                </p>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="carousel-item text-center">
+                <img src="assets/testimonials/profile3.jpeg" alt="Reviewer 3" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Pooja Verma</h4>
+                <p class="reviewer-role">Lifestyle Blogger</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A delightful experience with impeccable service. This restaurant truly stands out!"
+                </p>
+            </div>
+            <!-- Testimonial 4 -->
+            <div class="carousel-item text-center">
+                <img src="assets/testimonials/profile4.jpeg" alt="Reviewer 4" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Siddharth Kapoor</h4>
+                <p class="reviewer-role">Chef</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A cozy place with amazing flavors. Definitely a must-visit for food lovers!"
+                </p>
+            </div>
+            <!-- Testimonial 5 -->
+            <div class="carousel-item text-center">
+                <img src="assets/testimonials/profile5.jpeg" alt="Reviewer 5" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Megha Gupta</h4>
+                <p class="reviewer-role">Travel Blogger</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "The perfect destination for a family outing. The food and service are top-notch."
+                </p>
+            </div>
+            <!-- Testimonial 6 -->
+            <div class="carousel-item text-center">
+                <img src="assets/testimonials/profile6.jpeg" alt="Reviewer 6" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Arjun Nair</h4>
+                <p class="reviewer-role">Entrepreneur</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "Great food, amazing staff, and a wonderful atmosphere. Highly recommend!"
+                </p>
+            </div>
+            <!-- Testimonial 7 -->
+            <div class="carousel-item text-center">
+                <img src="assets/testimonials/profile7.jpeg" alt="Reviewer 7" class="rounded-circle profile-photo mb-3">
+                <h4 class="reviewer-name">Priya Malhotra</h4>
+                <p class="reviewer-role">Event Planner</p>
+                <div class="stars mb-2 text-warning">
+                    <span>&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                </div>
+                <p class="review-text mb-4">
+                    "A wonderful experience! The staff went above and beyond to ensure our comfort."
+                </p>
+            </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators justify-content-center mt-4">
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="6"
+                aria-label="Slide 7"></button>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="container py-5 bg-white">
+        <h2 class="text-center mb-4">Make a Reservation</h2>
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Phone Number" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="date" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="3" placeholder="Additional Notes"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Book Now</button>
+        </form>
+    </section>
+
+    <!-- Map Section -->
+    <div id="map" class="container py-5">
+        <h2 class="text-center mb-4">Find Us Here</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14250.5283079256!2d85.798725!3d20.260701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1dca16b1b2f47f%3A0x713ad3bb8ff7a61e!2s7Q6X%2BPH2%2C%20Plot%20no%20366%20%2F%207077%2C%20Jagamara%20Rd%2C%20Siddhi%20Vihar%2C%20Jagamara%2C%20Bhubaneswar%2C%20Odisha%20751030!5e0!3m2!1sen!2sin!4v1684244046902!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Back-to-Top Button -->
+    <a href="#home" class="back-to-top btn btn-secondary">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    < <!-- Footer -->
+        <footer class="footer bg-light text-dark py-5">
+            <div class="container">
+                <div class="row text-center text-md-start">
+                    <!-- Logo and Social Links -->
+                    <div class="col-md-3">
+                        <h4 class="text-success">Restaurant Delight</h4>
+                        <br>
+                        <div class="social-links">
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/logo.png" alt="Restaurant Logo" class="logo"></a>
+                            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="col-md-3">
+                        <h5 class="fw-bold">Services</h5>
+                        <ul class="list-unstyled">
+                            <li>Delivery</li>
+                            <li>Pricing</li>
+                            <li>Fast food</li>
+                            <li>Reserve your spot</li>
+                        </ul>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="col-md-3">
+                        <h5 class="fw-bold">Information</h5>
+                        <ul class="list-unstyled">
+                            <li>Event</li>
+                            <li>Contact Us</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms of Services</li>
+                        </ul>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="col-md-3">
+                        <h5 class="fw-bold">Address</h5>
+                        <ul class="list-unstyled">
+                            <li>2nd Floor</li>
+                            <li>Jagamara Rd, Siddhi Vihar, Jagamara</li>
+                            <li>Bhubaneswar, Odisha 751030</li>
+                            <li><a href="mailto:restaurantdelight@gmail.com">restaurantdelight@gmail.com</a></li>
+                            <li><a href="https://maps.app.goo.gl/muthkVmjL2kJEC6u8" target="_blank">View on Google
+                                    Maps</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Copyright Notice and Designed by -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">&copy; 2025 Restaurant Delight. All rights reserved.</p>
+                        <p class="mb-0">Designed by <a href="https://github.com/Ayush-Raj-Chourasia"
+                                target="_blank">Ayush</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
 </html>
