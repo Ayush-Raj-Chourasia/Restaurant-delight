@@ -23,6 +23,16 @@ $(document).ready(function () {
         zIndex: 9999,
     });
 
+
+    $('.gallery-item').hover(
+        function () {
+            $(this).css('z-index', 10);
+        },
+        function () {
+            $(this).css('z-index', 1);
+        }
+    );
+
     // Add item to cart
     window.addToCart = function (itemName) {
         if (!menuItems[itemName]) {
@@ -195,4 +205,7 @@ $(document).ready(function () {
             $('#cartSidebar').removeClass('active');
         }
     });
+
+
+    
 });
