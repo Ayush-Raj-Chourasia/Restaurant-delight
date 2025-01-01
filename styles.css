@@ -112,7 +112,7 @@ body {
 
 
 #home{
-    background-image: url('/assets/header.png'); 
+    background-image: url('assets/header.png'); 
     background-size: cover; 
     background-position: center; 
     margin-top: 60px; 
