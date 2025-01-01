@@ -2,17 +2,29 @@ $(document).ready(function () {
     let cart = [];
     const menuItems = {
         'Butter Chicken': 350,
+        'Paneer Butter Masala': 320,
+        'Fish Fry': 250,
+        'Rogan Josh': 400,
+        'Chicken Biryani': 300,
+        'Dal Makhani': 180,
+        'Naan': 50,
+        'Stuffed Paratha': 80,
+        'Garlic Naan': 60,
+        'Butter Roti': 40,
         'Gulab Jamun': 100,
-        'Tandoori Chicken': 400,
-        'Rogan Josh': 450,
-        'Pav Bhaji': 200,
-        'Rasgulla': 80,
-        'Idli & Sambar': 150,
-        'Paneer Butter Masala': 300,
-        'Masala Dosa': 180,
-        'Butter Naan': 60,
-        'Chicken Biryani': 350,
-        'Aloo Paratha': 120,
+        'Kulfi': 60,
+        'Rasmalai': 120,
+        'Fruit Salad': 120,
+        'Brownie': 150,
+        'Jalebi': 80,
+        'Kheer': 90,
+        'Sandesh': 100,
+        'Masala Chai': 30,
+        'Fresh Lime Soda': 40,
+        'Hot Chocolate': 90,
+        'Lassi': 50,
+        'Mango Lassi': 60,
+        'Cold Coffee': 70
     };
 
     // Initialize cart icon position
@@ -22,7 +34,6 @@ $(document).ready(function () {
         right: '20px',
         zIndex: 9999,
     });
-
 
     $('.gallery-item').hover(
         function () {
@@ -128,6 +139,35 @@ $(document).ready(function () {
             }, 2000);
         }, 100);
     }
+
+
+
+
+    // Add this to your existing script.js
+    $(document).ready(function() {
+        // Menu filtering
+        $('.btn-filter').click(function() {
+            $('.btn-filter').removeClass('active');
+            $(this).addClass('active');
+            
+            const category = $(this).data('filter');
+            
+            if(category === 'all') {
+                $('.menu-item').show();
+            } else {
+                $('.menu-item').hide();
+                $('.menu-item[data-category="' + category + '"]').show();
+            }
+        });
+    });
+
+
+
+
+
+
+
+
 
     // Cart toggle (open/close)
     $('.cart-icon, .close-cart').on('click', function (e) {

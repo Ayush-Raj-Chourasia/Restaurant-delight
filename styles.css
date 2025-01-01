@@ -1,71 +1,295 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
 
+
+
+/* Navbar Styles */
 .navbar {
-    background-color: #ff6347;
+    background-color: #000000;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center; /* Ensure items are vertically centered */
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    margin-top: -5px;
 }
 
 .navbar a {
     color: white !important;
+    font-size: 16px;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.btn-outline-light {
+    font-size: 14px;
+    padding: 4px 8px;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #ff6347 !important;
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+    display: inline-flex;
+    align-items: center;
+    color: green;
     font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    
 }
 
-.hero-section {
-    background-color: #f3a847;
+.cart-icon #cartCount {
+    position: absolute;
+    top: -10px; 
+    right: -10px; 
+    background-color: #ff6347; 
     color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Ensure navbar items and cart icon are aligned */
+.navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    margin-right: 15px; 
+}
+.navbar-nav .nav-item {
+    display: inline-block; 
+}
+
+.cart-icon {
+    display: inline-flex; 
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin: 1rem 0;
+    }
+
+    .form-inline {
+        margin-top: 1rem;
+    }
+
+    .cart-icon {
+        margin-top: 1rem;
+    }
+}
+
+
+#home{
+    background-image: url('/assets/header.png'); 
+    background-size: cover; 
+    background-position: center; 
+    margin-top: 60px; 
+    min-height: 40vh; 
+    display: flex; 
+    justify-content: right; 
+    align-items: center;
+}
+/* Base styles */
+.hero-title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-right:15rem;
+    
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
     text-align: center;
-    padding: 100px 0;
+    margin-right: 20rem;
 }
 
-.hero-section h1 {
-    font-size: 50px;
-    font-family: 'Georgia', serif;
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem; /* Smaller text for tablet and small devices */
+        
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
 }
 
-.menu-item {
-    text-align: center;
-    padding: 20px;
-    margin: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem; /* Even smaller text for mobile phones */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
 }
 
-.menu-item img {
-    width: 100%;
-    border-radius: 8px;
-    height: 250px;
-    object-fit: cover;
+
+
+
+/* Menu Section Styles */
+.menu-filters {
+    margin-bottom: 2rem;
 }
 
-.footer {
-    background-color: #ff6347;
+.btn-filter {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #ff6347;
+    background: transparent;
+    color: #ff6347;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-filter.active,
+.btn-filter:hover {
+    background: #ff6347;
     color: white;
-    padding: 30px 0;
-    text-align: center;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-content {
+    padding: 1.5rem;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+}
+
+.indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.veg i {
+    color: green;
+}
+
+.non-veg i {
+    color: red;
+}
+
+.spicy-level {
+    font-size: 1.2rem;
+}
+
+.description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    min-height: 40px;
+}
+
+.price-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6347;
 }
 
 .btn-order {
-    background-color: #4caf50;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    padding: 10px 20px;
-    margin-top: 10px;
-}
-
-.btn-order:hover {
-    background-color: #45a049;
-}
-
-.menu-section {
-    padding: 50px 0;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
 }
 
 
+/* Our Menu Section Heading */
+.menu-section h2 {
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 700; /* Bold weight */
+    color: #333; /* Darker color for better contrast */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add spacing between letters */
+    margin-bottom: 2rem; /* Add space below the heading */
+    position: relative; /* For the underline effect */
+    display: inline-block; /* Ensure the underline only spans the text */
+}
+
+/* Underline Effect for "Our Menu" */
+.menu-section h2::after {
+    content: '';
+    display: block;
+    width: 60%; /* Width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #ff6347; /* Color of the underline */
+    position: absolute;
+    bottom: -10px; /* Position below the text */
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%); /* Center the underline */
+    border-radius: 2px; /* Rounded corners for the underline */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .menu-section h2 {
+        font-size: 2rem; /* Slightly smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-section h2 {
+        font-size: 1.75rem; /* Smaller font size for mobile */
+        letter-spacing: 1px; /* Reduce letter spacing for mobile */
+    }
+}
 
 .back-to-top {
     position: fixed;
